@@ -53,8 +53,6 @@ public class Lessee {
     @Transient
     private List<Rent> rents = new ArrayList<>();
 
-    @Transient
-    private List<Car> cars = new ArrayList<>();
 
     public void addLesseeRent(LesseeRent lesseeRent){
         lesseeRents.add(lesseeRent);

@@ -87,12 +87,8 @@ public class LesseeServiceImpl implements LesseeService {
             if(!lessee.getLesseeRents().isEmpty()){
                 List<Long> ids = lessee.getLesseeRents().stream().map(
                         lesseeRent -> lesseeRent.getRentId()).collect(Collectors.toList());
-
-
                 List<Rent> rents = clientRest.getRentsByLessee(ids);
-                List<Car> cars = (List<Car>) clientRestC.getById(id);
-                 lessee.setRents(rents);
-                lessee.setCars(cars);
+                lessee.setRents(rents);
 
             }
             return Optional.of(lessee);

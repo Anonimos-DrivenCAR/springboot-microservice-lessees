@@ -21,13 +21,13 @@ public class LesseeController {
         this.service = service;
    }
 
-    @GetMapping("/")
+    @GetMapping("/all")
     public Map<String,List<Lessee>> getAll() {
         return Collections.singletonMap("lessees",service.findAll());
     }
 
 
-    @GetMapping("details/{id}") //getByID -> Details
+    @GetMapping("/details/{id}") //getByID -> Details
     public ResponseEntity<?> detail(@PathVariable Long id){
         Optional<Lessee> o = service.findByIdWithCars(id);     //service.findLessorById(id);
         if(o.isPresent()){

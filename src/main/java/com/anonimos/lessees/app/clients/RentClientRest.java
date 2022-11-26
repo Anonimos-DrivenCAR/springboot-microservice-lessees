@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 
-@FeignClient(name = "msvc-rents", url = "http://localhost:8080/api/rent")
+@FeignClient(name = "msvc-rents", url = "ec2-3-86-52-51.compute-1.amazonaws.com:8004/api/rent")
 public interface RentClientRest {
     @GetMapping("/{id}")
     Rent getById(@PathVariable Long id);
